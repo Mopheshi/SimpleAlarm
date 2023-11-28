@@ -30,7 +30,6 @@ public class SignupActivity extends AppCompatActivity {
     ArrayList<User> users;
     Database database;
 
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,18 +46,13 @@ public class SignupActivity extends AppCompatActivity {
 
         // Ask user to grant permissions
         if ((ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) ||
-                (ActivityCompat.checkSelfPermission(this,
-                        Manifest.permission.SET_ALARM) != PackageManager.PERMISSION_GRANTED) ||
+                Manifest.permission.SET_ALARM) != PackageManager.PERMISSION_GRANTED) ||
                 (ActivityCompat.checkSelfPermission(this,
                         Manifest.permission.VIBRATE) != PackageManager.PERMISSION_GRANTED) ||
                 (ActivityCompat.checkSelfPermission(this,
-                        Manifest.permission.WAKE_LOCK) != PackageManager.PERMISSION_GRANTED) ||
-                (ActivityCompat.checkSelfPermission(this,
-                        Manifest.permission.SCHEDULE_EXACT_ALARM) != PackageManager.PERMISSION_GRANTED)) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS,
-                    Manifest.permission.SET_ALARM, Manifest.permission.VIBRATE, Manifest.permission.WAKE_LOCK,
-                    Manifest.permission.SCHEDULE_EXACT_ALARM}, 10);
+                        Manifest.permission.WAKE_LOCK) != PackageManager.PERMISSION_GRANTED)) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SET_ALARM,
+                    Manifest.permission.VIBRATE, Manifest.permission.WAKE_LOCK,}, 10);
         }
 
         for (User user : users) {
