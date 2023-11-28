@@ -1,4 +1,4 @@
-package com.github.ppartisan.simplealarms.ui;
+package com.github.ppartisan.simplealarms.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

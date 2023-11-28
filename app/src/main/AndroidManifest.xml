@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -11,18 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".activity.SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.AddEditAlarmActivity" />
+        <activity android:name=".activity.AddEditAlarmActivity" />
 
         <activity
-            android:name=".ui.AlarmLandingPageActivity"
+            android:name=".activity.AlarmLandingPageActivity"
             android:theme="@style/AlertLandingPageTheme" />
+
+        <activity android:name="com.github.ppartisan.simplealarms.activity.SigninActivity" />
+
+        <activity android:name="com.github.ppartisan.simplealarms.activity.MainActivity" />
 
         <service android:name=".service.LoadAlarmsService" />
 
@@ -30,9 +34,12 @@
 
         <receiver android:name=".service.AlarmReceiver" />
 
-        <receiver android:name=".service.BootReceiver" android:enabled="true" android:exported="true">
+        <receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter android:priority="${bootPriority}">
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 

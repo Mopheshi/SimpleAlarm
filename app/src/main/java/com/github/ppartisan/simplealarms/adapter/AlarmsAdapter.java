@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.github.ppartisan.simplealarms.R;
 import com.github.ppartisan.simplealarms.model.Alarm;
-import com.github.ppartisan.simplealarms.ui.AddEditAlarmActivity;
+import com.github.ppartisan.simplealarms.activity.AddEditAlarmActivity;
 import com.github.ppartisan.simplealarms.util.AlarmUtils;
 
 import java.util.List;

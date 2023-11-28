@@ -1,4 +1,4 @@
-package com.github.ppartisan.simplealarms.ui;
+package com.github.ppartisan.simplealarms.activity;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -24,8 +24,8 @@ import com.github.ppartisan.simplealarms.view.EmptyRecyclerView;
 
 import java.util.ArrayList;
 
-import static com.github.ppartisan.simplealarms.ui.AddEditAlarmActivity.ADD_ALARM;
-import static com.github.ppartisan.simplealarms.ui.AddEditAlarmActivity.buildAddEditAlarmActivityIntent;
+import static com.github.ppartisan.simplealarms.activity.AddEditAlarmActivity.ADD_ALARM;
+import static com.github.ppartisan.simplealarms.activity.AddEditAlarmActivity.buildAddEditAlarmActivityIntent;
 
 public final class MainFragment extends Fragment
         implements LoadAlarmsReceiver.OnAlarmsLoadedListener {

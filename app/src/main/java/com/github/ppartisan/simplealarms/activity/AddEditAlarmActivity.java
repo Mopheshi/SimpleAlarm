@@ -1,4 +1,4 @@
-package com.github.ppartisan.simplealarms.ui;
+package com.github.ppartisan.simplealarms.activity;
 
 import android.content.Context;
 import android.content.Intent;
