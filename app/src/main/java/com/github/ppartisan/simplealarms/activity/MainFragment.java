@@ -3,6 +3,7 @@ package com.github.ppartisan.simplealarms.activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -39,7 +40,7 @@ public final class MainFragment extends Fragment
         mReceiver = new LoadAlarmsReceiver(this);
     }
 
-    @Nullable
+    @NonNull
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -68,14 +69,14 @@ public final class MainFragment extends Fragment
     public void onStart() {
         super.onStart();
         final IntentFilter filter = new IntentFilter(LoadAlarmsService.ACTION_COMPLETE);
-        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mReceiver, filter);
+        LocalBroadcastManager.getInstance(requireContext()).registerReceiver(mReceiver, filter);
         LoadAlarmsService.launchLoadAlarmsService(getContext());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mReceiver);
+        LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(mReceiver);
     }
 
     @Override
